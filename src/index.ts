@@ -1,6 +1,6 @@
 import Express from "express";
 const app = Express();
-const port = 4010;
+const port = 443;
 const productsRouter = require('../routes/productRoutes');
 import { handleError } from '../helpers/handleError';
 
