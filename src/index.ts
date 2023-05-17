@@ -7,7 +7,7 @@ import { handleError } from '../helpers/handleError';
 app.disable('x-powered-by');
 app.use(Express.json());
 app.use(Express.urlencoded({ extended: false }));
-app.use('/api/v1/products', productsRouter);
+app.use('/api/product', productsRouter);
 
 app.listen(port, () => {
   // tslint:disable-next-line:no-console
