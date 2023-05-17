@@ -12,7 +12,8 @@ async function getProduct(req: any, res: any, next: any) {
 
 async function create(req: any, res: any, next: any) {
   try {
-    // console.log("req in create", req);
+    const data = JSON.parse(req.body.rawRequest)
+    console.log('data in create', data)
     const productName = req.body.name;
     // const productPrice = req.body.price;
     // const productQuantity = req.body.quantity;
