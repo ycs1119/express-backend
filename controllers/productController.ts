@@ -31,4 +31,20 @@ async function create(req: any, res: any, next: any) {
   }
 }
 
+async function remove(req: any, res: any, next: any) {
+  try {
+    const productId = req.body.id;
+
+    // to-do: code
+
+    res.status(201).json({
+      status: "success",
+      message: "succesfully removed"
+    });
+  } catch (error) {
+    console.log(req);
+    nextTick(error);
+  }
+}
+
 module.exports = { all, create };
