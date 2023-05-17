@@ -1,12 +1,12 @@
-import Express from "express";
-const app = Express();
+import express from "express";
+const app = express();
 const port = 443;
 const productsRouter = require('../routes/productRoutes');
 import { handleError } from '../helpers/handleError';
 
 app.disable('x-powered-by');
-app.use(Express.json());
-app.use(Express.urlencoded({ extended: false }));
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
 app.use('/api/product', productsRouter);
 
 app.listen(port, () => {
