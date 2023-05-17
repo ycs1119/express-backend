@@ -31,20 +31,34 @@ async function create(req: any, res: any, next: any) {
   }
 }
 
-async function remove(req: any, res: any, next: any) {
+// async function remove(req: any, res: any, next: any) {
+//   try {
+//     const productId = req.body.image;
+
+//     // to-do: code
+
+//     res.status(201).json({
+//       status: "success",
+//       message: "succesfully removed"
+//     });
+//   } catch (error) {
+//     console.log(req);
+//     nextTick(error);
+//   }
+// }
+async function Update(req: any, res: any, next: any) {
   try {
-    const productId = req.body.id;
 
-    // to-do: code
-
-    res.status(201).json({
-      status: "success",
-      message: "succesfully removed"
-    });
-  } catch (error) {
+  } catch (err) {
     console.log(req);
-    nextTick(error);
+    watch(err);
   }
 }
-
 module.exports = { all, create };
+function nextTick(error: any) {
+  throw new Error("Function not implemented.");
+}
+
+function watch(err: any) {
+  throw new Error("Function not implemented.");
+}
