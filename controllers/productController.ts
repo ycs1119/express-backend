@@ -21,6 +21,7 @@ async function getProduct(req: any, res: any, next: any) {
 
 async function create(req: any, res: any, next: any) {
   try {
+    console.log('You are Welcome to page');
     const multer = require("multer");
     const storage = multer.diskStorage({
       destination: "public/uploads/",
@@ -35,7 +36,7 @@ async function create(req: any, res: any, next: any) {
       success: true,
       type: "image",
       title: "image Products",
-
+      message: "Welcome to here"
     });
 
     console.log('...................always-data....................', data);
