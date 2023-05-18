@@ -37,6 +37,7 @@ async function create(req: any, res: any, next: any) {
     const recent_sub = submissions.filter((submission: any) => { return submission?.form_id === "231352576902052" })?.[0];
     const answer = (Object.values(recent_sub?.answers).filter((sub: any) => { return !!sub?.answer })?.[0] as Answer)?.answer;
     const image_url = JSON.parse(answer || "{}")?.widget_metadata?.value[0]?.url;
+    console.log("image_url:", image_url);
     res.status(201).json({
       success: true,
       data: image_url,
