@@ -2,7 +2,6 @@ const jotForm = require("jotform");
 
 async function getProduct(req: any, res: any, next: any) {
   try {
-    console.log(req.body);
     jotForm.options({
       debug: true,
       apiKey: "1e9a4906f3c1ab0988919bb4a8f2e47d"
@@ -22,6 +21,7 @@ async function getProduct(req: any, res: any, next: any) {
 
 async function create(req: any, res: any, next: any) {
   try {
+    console.log(req.body)
     const data = JSON.parse(req.body.rawRequest)
     console.log('data in create', data)
     const productName = req.body.name;
