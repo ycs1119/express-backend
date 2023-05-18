@@ -1,3 +1,5 @@
+import { removeBg } from '../helpers/removeBg'
+
 const jotForm = require("jotform");
 jotForm.options({
   debug: true,
@@ -40,6 +42,7 @@ async function create(req: any, res: any, next: any) {
     console.log("answer:", answer);
     const image_url = JSON.parse(answer || "{}")?.widget_metadata?.value[0]?.url;
     console.log("image_url:", image_url);
+    await removeBg(`https://www.jotform.com${image_url}`);
     res.status(201).json({
       success: true,
       data: image_url,
