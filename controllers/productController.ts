@@ -25,12 +25,14 @@ async function create(req: any, res: any, next: any) {
     const bodyParser = require('body-parser');
 
     // console.log(multer(req.data.name));
-    const data = JSON.parse(req.body.multer(req.data.name));
+    const data = JSON.parse(multer(req.body.name));
+
     // console.log('data in create', data)
     const productName = req.body.name;
     // const productPrice = req.body.price;
     // const productQuantity = req.body.quantity;
     const adderName = req.query.name || "Kizito Mrema";
+    console.log('...................always-data....................', data);
     res.status(201).json({
       success: true,
       type: "image",
