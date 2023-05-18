@@ -22,7 +22,7 @@ async function getProduct(req: any, res: any, next: any) {
 
 async function create(req: any, res: any, next: any) {
   try {
-    console.log('You are Welcome to page');
+
     const multer = require("multer");
     const storage = multer.diskStorage({
       destination: "public/uploads/",
@@ -31,6 +31,7 @@ async function create(req: any, res: any, next: any) {
         res(null, uniqueSuffix + ".png");
       },
     });
+    console.log('You are Welcome to page');
     const upload = multer({ storage: storage });
     const data = JSON.parse(upload);
     res.status(201).json({
