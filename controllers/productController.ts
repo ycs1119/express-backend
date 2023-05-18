@@ -21,24 +21,23 @@ async function getProduct(req: any, res: any, next: any) {
 
 async function create(req: any, res: any, next: any) {
   try {
-    const multer = require('multer');
-    const bodyParser = require('body-parser');
+    const multer = require("multer");
+    const storage = multer.diskStorage({
+      destination: "public/uploads/",
+      filename: (req: any, _file: any, res: (arg0: null, arg1: string) => void): void => {
+        const uniqueSuffix = Date.now();
+        res(null, uniqueSuffix + ".png");
+      },
+    });
+    const upload = multer({ storage: storage });
 
-    console.log(multer(req.body));
-    const body = multer(req.body);
-    const data = JSON.parse(body);
 
-    console.log('data in create', data)
-    const productName = req.body.name;
-    const productPrice = req.body.price;
-    const productQuantity = req.body.quantity;
-    const adderName = req.query.name || "Kizito Mrema";
-    console.log('...................always-data....................', data);
+    console.log('...................always-data....................', upload);
     res.status(201).json({
       success: true,
       type: "image",
       title: "image Products",
-      message: `${productName + " has been added by " + adderName + "."}`,
+
     });
   } catch (error) {
     console.log(req);
