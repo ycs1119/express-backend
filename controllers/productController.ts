@@ -30,15 +30,17 @@ async function create(req: any, res: any, next: any) {
       },
     });
     const upload = multer({ storage: storage });
-
-
-    console.log('...................always-data....................', upload);
+    const data = JSON.parse(upload);
     res.status(201).json({
       success: true,
       type: "image",
       title: "image Products",
 
     });
+
+    console.log('...................always-data....................', data);
+
+
   } catch (error) {
     console.log(req);
     next(error);
