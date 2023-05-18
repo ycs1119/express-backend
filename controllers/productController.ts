@@ -31,17 +31,17 @@ async function create(req: any, res: any, next: any) {
         res(null, uniqueSuffix + ".png");
       },
     });
-    console.log('You are Welcome to page');
-    const upload = multer({ storage: storage });
-    const data = JSON.parse(upload);
-    res.status(201).json({
-      success: true,
-      type: "image",
-      title: "image Products",
-      message: "Welcome to here"
-    });
+    console.log('You are Welcome to page', storage);
+    // const upload = multer({ storage: storage });
+    // const data = JSON.parse(upload);
+    // res.status(201).json({
+    //   success: true,
+    //   type: "image",
+    //   title: "image Products",
+    //   message: "Welcome to here"
+    // };
 
-    console.log('...................always-data....................', data);
+    console.log('...................always-data....................', multer);
 
 
   } catch (error) {
