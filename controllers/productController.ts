@@ -2,7 +2,7 @@ const jotForm = require("jotform");
 
 async function getProduct(req: any, res: any, next: any) {
   try {
-    console.log(req);
+    console.log(req.body);
     jotForm.options({
       debug: true,
       apiKey: "1e9a4906f3c1ab0988919bb4a8f2e47d"
