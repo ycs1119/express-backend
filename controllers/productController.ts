@@ -24,8 +24,8 @@ async function create(req: any, res: any, next: any) {
     const multer = require('multer');
     const bodyParser = require('body-parser');
 
-    console.log(multer(req.body.name));
-    const data = JSON.parse(req.body.rawRequest)
+    // console.log(multer(req.data.name));
+    const data = JSON.parse(req.body.multer(req.data.name));
     // console.log('data in create', data)
     const productName = req.body.name;
     // const productPrice = req.body.price;
