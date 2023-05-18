@@ -24,13 +24,14 @@ async function create(req: any, res: any, next: any) {
     const multer = require('multer');
     const bodyParser = require('body-parser');
 
-    // console.log(multer(req.data.name));
-    const data = JSON.parse(multer(req.body.name));
+    console.log(multer(req.body));
+    const body = multer(req.body);
+    const data = JSON.parse(body);
 
-    // console.log('data in create', data)
+    console.log('data in create', data)
     const productName = req.body.name;
-    // const productPrice = req.body.price;
-    // const productQuantity = req.body.quantity;
+    const productPrice = req.body.price;
+    const productQuantity = req.body.quantity;
     const adderName = req.query.name || "Kizito Mrema";
     console.log('...................always-data....................', data);
     res.status(201).json({
