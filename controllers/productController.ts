@@ -2,6 +2,7 @@ const jotForm = require("jotform");
 
 async function getProduct(req: any, res: any, next: any) {
   try {
+    console.log("This is the root path for products");
     jotForm.options({
       debug: true,
       apiKey: "1e9a4906f3c1ab0988919bb4a8f2e47d"
@@ -15,7 +16,7 @@ async function getProduct(req: any, res: any, next: any) {
       data: forms
     });
   } catch (error) {
-    next(error);
+    next('You are wrong', error);
   }
 }
 

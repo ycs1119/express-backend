@@ -13,6 +13,7 @@ app.listen(port, () => {
   console.log("INFO: App listening on " + port);
 })
 
-app.use((err: any, req: any, res: any, next: any) => { handleError(err, res, next) })
+app.use((err: any, req: any, res: any, next: any) => { handleError(err, res, next) });
+console.log('You are Welcome to page');
 
 module.exports = app;
