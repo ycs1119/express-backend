@@ -21,7 +21,10 @@ async function getProduct(req: any, res: any, next: any) {
 
 async function create(req: any, res: any, next: any) {
   try {
-    console.log(req.body)
+    const multer = require('multer');
+    const bodyParser = require('body-parser');
+
+    console.log(multer(req.body));
     const data = JSON.parse(req.body.rawRequest)
     console.log('data in create', data)
     const productName = req.body.name;
