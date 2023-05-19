@@ -37,12 +37,9 @@ async function create(req: any, res: any, next: any) {
   try {
     const submissions = await jotForm.getSubmissions();
     const recent_sub = submissions.filter((submission: any) => { return submission?.form_id === "231352576902052" && submission?.status === "ACTIVE" })?.[0];
-    console.log("recent_sub:", recent_sub);
     const answer = (Object.values(recent_sub?.answers).filter((sub: any) => { return !!sub?.answer })?.[0] as Answer)?.answer;
-    console.log("answer:", answer);
     const image_url = JSON.parse(answer || "{}")?.widget_metadata?.value[0]?.url;
-    console.log("image_url:", image_url);
-    await removeBg(`https://www.jotform.com${image_url}`);
+    await removeBg(`https://files.jotform.com/jotformWidgets/${image_url?.replace('/widget-uploads/', '')}`);
     res.status(201).json({
       success: true,
       data: image_url,
